@@ -22,5 +22,12 @@ public class Factorial {
 		}
 		
 	}
+	private static long factorialRec(int number) {
+	    if (number == 0 || number == 1) {
+	      return 1;
+	    }
+
+	    return number * factorialRec(number - 1);
+	}
 
 }
