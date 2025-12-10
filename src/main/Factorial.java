@@ -6,8 +6,23 @@ public class Factorial {
 	private static Scanner keyboard = new Scanner(System.in);
 
 	private static int pedirNumero() {
-		System.out.print("Introduce un número entero mayor o igual que 0: ");
-		return keyboard.nextInt();
+		int number;
+		boolean correct;
+		do {
+			System.out.print("Introduce un número entero mayor o igual que 0: ");
+			if(keyboard.hasNextInt()) {
+				number = keyboard.nextInt();
+				correct = true;
+			}else {
+				System.out.println("Entrada no válida. Introduce un entero.");
+	            keyboard.next();
+	            correct = false;
+	            number = -1;
+			}
+			
+		}while(!correct);
+		
+		return number;
 	}
 
 	public static void main(String[] args) {
