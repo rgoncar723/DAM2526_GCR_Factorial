@@ -10,19 +10,30 @@ public class Factorial {
 		boolean correct;
 		do {
 			System.out.print("Introduce un número entero mayor o igual que 0: ");
-			if(keyboard.hasNextInt()) {
+			if (keyboard.hasNextInt()) {
 				number = keyboard.nextInt();
 				correct = true;
-			}else {
+			} else {
 				System.out.println("Entrada no válida. Introduce un entero.");
-	            keyboard.next();
-	            correct = false;
-	            number = -1;
+				keyboard.next();
+				correct = false;
+				number = -1;
 			}
-			
-		}while(!correct);
-		
+
+		} while (!correct);
+
 		return number;
+	}
+
+	private static long factorialBucle(int number) {
+		long result = 1;
+		if (number == 1 || number == 0) {
+			return 1;
+		}
+		for (int i = 2; i <= number; i++) {
+			result *= i;
+		}
+		return result;
 	}
 
 	public static void main(String[] args) {
@@ -35,7 +46,7 @@ public class Factorial {
 			System.out.println("Has introducido el número: " + number);
 			System.out.println("RESULTADO - En versiones posteriores se calculará el factorial del número " + number);
 		}
-		
+
 	}
 
 }
